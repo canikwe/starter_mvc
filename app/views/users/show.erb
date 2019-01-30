@@ -10,7 +10,11 @@
     Description: <%=@user.description%>
     <h3>What would you like to do?</h3>
 
+  <a href="/users/<%=@user.id%>/edit"> Edit Account Info</a>
 
+  <form action="/users/<%=@user.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Account"></form>
 
   </body>
 </html>

@@ -23,4 +23,23 @@ class UsersController < ApplicationController
     erb :"users/show"
   end
 
+  get "/users/:id/edit" do
+    @user = User.find(params[:id])
+    erb :"users/edit"
+  end
+
+  patch "/users/:id" do
+    # binding.pry
+    user = User.find(params[:id])
+    user.update(name: params[:name],
+                description: params[:description])
+    redirect :"users/#{user.id}"
+  end
+
+  delete "/users/:id" do
+    user = User.find(params[:id])
+    user.delete
+    redirect :"/users"
+  end
+
 end
