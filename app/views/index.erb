@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Airbnb!</title>
+  </head>
+  <body>
+    <h1>Welcome to Airbnb!</h1>
+    <br>
+    <a href="/users/new">Create a User!</a>
+
+    <h1>See your name below? Please select your account to login!</h1>
+    <ul>
+    <% @all_users.each do |user| %>
+    <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
+     <% end %>
+
+  </body>
+</html>
