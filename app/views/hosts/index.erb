@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Host List</title>
+  </head>
+  <body>
+    <h1>Choose A Spot!</h1>
+    <br>
+    <ul>
+    <% @all_hosts.each do |host| %>
+    <li><a href="/host/<%=host.id%>"><%= host.name %></a></li>
+    <img src="<%=host.url%>">
+    <br>
+    <br>
+     <% end %>
+
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Reservations</title>
+  </head>
+  <body>
+    <h1>Where Will You Go Next?!</h1>
+    <br>
+    <h1>Click on a host to learn more!</h1>
+    <ul>
+    <% @all_hosts.each do |host| %>
+    <li><a href="/host/<%=host.id%>"><%= host.name %></a></li>
+     <% end %>
+
+  </body>
+</html>
