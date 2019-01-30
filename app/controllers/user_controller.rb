@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
+
+=======
+>>>>>>> f85d30de6ce80dece56d633b9638c74e957181c5
 
   get '/' do
     redirect "/users"
-  end
-  
-  get "/users/new" do
-    erb :"users/new"
-  end
-
-  post "/users" do
-    user = User.create(params)
-    redirect "/users/#{user.id}"
   end
 
   get '/users' do
@@ -22,5 +17,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     erb :show_users
   end
+
 
 end
