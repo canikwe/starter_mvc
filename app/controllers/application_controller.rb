@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
 
   set :views, 'app/views'
-  set :method_overide, true
+  set :method_override, true
 
   get '/' do
   end
