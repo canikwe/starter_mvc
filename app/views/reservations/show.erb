@@ -2,17 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> <%=@reservation.name %></title>
+    <title> Reservation Details %></title>
   </head>
   <body>
-    <h1> Welcome to <%=@host.name%>'s page!</h1>
-    <br>
-    <img src="<%@reservation.url%>" alt="">
-    <br>
-    Description: <%=@reservation.description%>
-    <h3>What would you like to do?</h3>
-
-
+    <h1> Your Reservation with <%=@reservation.host.name%></h1>
+    
+    <h3>Trip Details:</h3>
+      <ul>
+<li>Host: <a href="/hosts/<%=@reservation.host.id%>">
+    <%=@reservation.host.name %></a></li>
+        <li>Total Cost: <%=@reservation.cost%></li>
+        <li>Length of Stay: <%=@reservation.length_of_stay%> day(s)</li>
+      </ul>
+  
+  <h3>What would you like to do?</h3>
+  <form action="/reservations/<%=@reservation.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Trip"></form>
 
   </body>
 </html>

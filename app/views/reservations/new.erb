@@ -13,23 +13,25 @@
     <p>Now that you've had a chance to peruse our lovely selections, feel free to choose your next destination today!</p>
 
     <form action="/reservations" method="POST">
-      <label for="user">Select User: </label>
-      <select name="user">
+      <label for="user_id">Select User: </label>
+      <select name="user_id">
         <% @users.order(:name).each do |user| %>
-          <option value="<%=user.id%>"><%=user.name%></option>
+        <option value="<%=user.id%>"><%=user.name%></option>
         <% end %>
-      </select>
+      </select><p></p>
+      
+      <h3>Why wait? Select up to three reservations today!</h3>
 
-      <label for="hosts[]">Select Host: </label>
-      <select name="hosts[]">
+      <label for="host[id]">Select Host: </label>
+      <select name="host[id]">
         <% @hosts.order(:name).each do |host| %>
           <option value="<%=host.id%>"><%=host.name%></option>
           <% end %>
       </select>
         <p></p>
-        <label for="hosts[]length_of_stay">Select Length of Stay</label>
+        <label for="host[length_of_stay]">Select Length of Stay: </label>
           <% (1..5).to_a.each do |d| %>
-            <input type="radio" name="hosts[]length_of_stay" value="<%= d %>">
+            <input type="radio" name="host[length_of_stay]" value="<%= d %>">
               <% if d == 1 %>
                 <%= "#{d} Day"%>
               <% else %>
@@ -39,6 +41,7 @@
           <% end %>
         <p></p>
         <p></p>
+
         <input type="submit" value="Create Rez!">
     
     </form>
