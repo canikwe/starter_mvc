@@ -11,7 +11,7 @@
 
     <h1>See your name below? Please select your account to login!</h1>
     <ul>
-    <% @all_users.each do |user| %>
+    <% @all_users.order(:name).each do |user| %>
     <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
      <% end %>
 
