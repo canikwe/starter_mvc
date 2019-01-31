@@ -9,7 +9,7 @@
     <br>
     <h1>Click on a host to learn more!</h1>
     <ul>
-    <% @all_hosts.each do |host| %>
+    <% @all_hosts.order(:name).each do |host| %>
     <li><a href="/host/<%=host.id%>"><%= host.name %></a></li>
      <% end %>
 
